@@ -22,5 +22,28 @@ namespace Indicadores.DA.Class
         {
             return new SqlConnection(ConfigurationExtensions.GetConnectionString(_configuration, "DB"));
         }
+
+       //   try
+       //     {
+       //         using var connection = _connectionManager.GetConnection();
+
+       // var result = await connection.QueryAsync<int>(
+       //    sql: "usp_GuardarIndicadoresEconomicos",
+       //    param: new
+       //    {
+       //        datosIndicadoresEconomicos.CodIndicadorEconomico,
+       //        datosIndicadoresEconomicos.DesFecha,
+       //        datosIndicadoresEconomicos.NumValor
+       //    },
+       //    commandType: System.Data.CommandType.StoredProcedure
+       //);
+
+       // response = result.FirstOrDefault();
+       //     }
+       //     catch (Exception ex)
+       //     {
+
+       //         Console.WriteLine("Error: " + ex.Message);
+       //     }
     }
 }
