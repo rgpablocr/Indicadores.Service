@@ -12,8 +12,8 @@ namespace Indicadores.DA.Class
 {
     public class PosValor
     {
-        //Estado = 1 exito
         //Estado = 0 exito
+        //Estado = 1 exito
 
         //public Respuesta insertarPosValor(PosValor posValor)
         //{
