@@ -5,6 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 //INYECCION DE DEPENDENCIAS
 builder.Services.AddScoped<IConnectionManager, ConnectionManager>();
+builder.Services.AddScoped<IIndicadorDA, IndicadorDA>();
 //
 
 builder.Services.AddControllers();

@@ -6,10 +6,17 @@ using System.Threading.Tasks;
 
 namespace Indicadores.Model
 {
-    public  class Respuesta
+    public  class Respuesta<T>
     {
-        public int Estado { get; set; }
+        public int? Estado { get; set; }
 
-        public string Mensaje { get; set; }
+        public string? Mensaje { get; set; }
+
+        public List<T>? Lista { get; set; }
+
+        public Respuesta()
+        {
+            this.Lista = new List<T>();
+        }
     }
 }

@@ -9,13 +9,16 @@ namespace Indicadores.Model
 {
     public class IndicadorInput
     {
-        public int IdIndicador { get; set; }
+        public int CuentaCatalogoIndicador { get; set; }
 
-        public int IdCuentaCatalogo { get; set; }
+        public int EstadoIndicador { get; set; }
+        public int PeriodicidadIndicador { get; set; }
 
-        public int IdEstado { get; set; }
-        public int IdPeriodicidad { get; set; }
+        public int UnidadMedidaIndicador { get; set; }
 
-        public int? IdUnidadMedida { get; set; }
+        public List<PosValorMetaDataIndicadorInput> PosValoresList { get; set; }
+
+        public string? PosValores { get; set; }
+
     }
 }
