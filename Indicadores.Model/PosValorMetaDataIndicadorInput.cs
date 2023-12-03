@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Indicadores.Model
@@ -11,6 +12,7 @@ namespace Indicadores.Model
 
         public int IdPosValor { get; set; }
 
+        [JsonIgnoreAttribute]
         public int Orden { get; set; }
     }
 }

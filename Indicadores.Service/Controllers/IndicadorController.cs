@@ -71,5 +71,54 @@ namespace Indicadores.Service.Controllers
                 throw;
             }
         }
+
+        [HttpPost]
+        [Route("ModificarIndicador")]
+        public async Task<IActionResult> ModificarIndicador([FromBody]  IndicadorInput indicadorInput)
+        {
+            try
+            {
+                var respuesta = await indicadorBL.ModificarIndicador(indicadorInput);
+
+                return StatusCode(200, respuesta);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        [HttpPost]
+        [Route("AsignarPosValorIndicador")]
+        public async Task<IActionResult> AsignarPosValorIndicador([FromBody] PosValorMetaDataIndicador posValorMetaData)
+        {
+            try
+            {
+                var respuesta = await indicadorBL.AsignarPosValorIndicador(posValorMetaData);
+
+                return StatusCode(200, respuesta);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        [HttpPost]
+        [Route("DesasignarPosValorIndicador")]
+        public async Task<IActionResult> DesasignarPosValorIndicador([FromBody] PosValorMetaDataIndicador posValorMetaData)
+        {
+            try
+            {
+                var respuesta = await indicadorBL.DesasignarPosValorIndicador(posValorMetaData);
+
+                return StatusCode(200, respuesta);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

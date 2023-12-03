@@ -6,6 +6,11 @@ var builder = WebApplication.CreateBuilder(args);
 //INYECCION DE DEPENDENCIAS
 builder.Services.AddScoped<IConnectionManager, ConnectionManager>();
 builder.Services.AddScoped<IIndicadorDA, IndicadorDA>();
+builder.Services.AddScoped<ICuentaCatalogoDA, CuentaCatalogoDA>();
+builder.Services.AddScoped<IPeriodicidadDA, PeriodicidadDA>();
+builder.Services.AddScoped<IEstadoDA, EstadoDA>();
+builder.Services.AddScoped<IMetaDataDA, MetaDataDA>();
+
 //
 
 builder.Services.AddControllers();

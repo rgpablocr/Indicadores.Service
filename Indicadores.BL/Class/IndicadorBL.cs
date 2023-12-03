@@ -32,5 +32,21 @@ namespace Indicadores.BL.Class
         {
             return await indicadorDA.EliminarIndicador(idIndicador);
         }
+
+        public async Task<Respuesta<IndicadorOutput>> ModificarIndicador(IndicadorInput indicadorInput)
+        {
+            return await indicadorDA.ModificarIndicador(indicadorInput);
+        }
+
+        public async Task<Respuesta<PosValorMetaDataIndicador>> AsignarPosValorIndicador(PosValorMetaDataIndicador posValorMetaData)
+        {
+            return await indicadorDA.AsignarPosValorIndicador(posValorMetaData);
+        }
+
+        public async Task<Respuesta<PosValorMetaDataIndicador>> DesasignarPosValorIndicador(PosValorMetaDataIndicador posValorMetaData)
+        {
+            return await indicadorDA.DesasignarPosValorIndicador(posValorMetaData);
+        }
+
     }
 }

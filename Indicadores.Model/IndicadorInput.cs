@@ -9,6 +9,8 @@ namespace Indicadores.Model
 {
     public class IndicadorInput
     {
+        public int? IdIndicador { get; set; }
+
         public int CuentaCatalogoIndicador { get; set; }
 
         public int EstadoIndicador { get; set; }
