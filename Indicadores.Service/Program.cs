@@ -11,6 +11,8 @@ builder.Services.AddScoped<IPeriodicidadDA, PeriodicidadDA>();
 builder.Services.AddScoped<IEstadoDA, EstadoDA>();
 builder.Services.AddScoped<IMetaDataDA, MetaDataDA>();
 
+builder.Services.AddScoped<IUnidadDeMedidaDA, UnidadDeMedidaDA>();
+builder.Services.AddScoped<IPosValorDA, PosValorDA>();
 //
 
 builder.Services.AddControllers();
