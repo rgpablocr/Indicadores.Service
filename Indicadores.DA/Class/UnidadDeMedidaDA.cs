@@ -71,7 +71,7 @@ namespace Indicadores.DA.Class
 
                 var parameters = new DynamicParameters();
                 parameters.Add("@Valor", unidadMedida.Valor, DbType.String);
-                parameters.Add("@Descripcion", unidadMedida.Descripcion, DbType.String);
+                parameters.Add("@Descripcion", unidadMedida.Descripcion.ToUpper(), DbType.String);
                 parameters.Add("@Status", unidadMedida.Estado, DbType.String);
 
                 parameters.Add("@Estado", dbType: DbType.Int32, direction: ParameterDirection.Output);

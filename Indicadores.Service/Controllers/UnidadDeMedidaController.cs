@@ -2,6 +2,7 @@
 using Indicadores.DA.Class;
 using Indicadores.DA.Interface;
 using Indicadores.Model;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Indicadores.Service.Controllers
@@ -18,7 +19,7 @@ namespace Indicadores.Service.Controllers
             this.unidadBL = new UnidadDeMedidaBL(unidadDA);
         }
 
-
+        [Authorize]
         [HttpPost]
         [Route("ListarUnidadesDeMedida")]
         public async Task<IActionResult> ListarUnidadMedida()
@@ -36,7 +37,7 @@ namespace Indicadores.Service.Controllers
             }
         }
 
-
+        [Authorize]
         [HttpPost]
         [Route("InsertarUnidadDeMedida")]
         public async Task<IActionResult> InsertarUnidadMedida([FromBody] UnidadMedida unidadMedida)
@@ -54,6 +55,7 @@ namespace Indicadores.Service.Controllers
             }
         }
 
+        [Authorize]
         [HttpPost]
         [Route("ModificarUnidadMedida")]
         public async Task<IActionResult> ModificarUnidadMedida([FromBody] UnidadMedida unidadMedida)
@@ -71,6 +73,7 @@ namespace Indicadores.Service.Controllers
             }
         }
 
+        [Authorize]
         [HttpPost]
         [Route("EliminarUnidadMedida")]
         public async Task<IActionResult> EliminarUnidadMedida([FromBody] int idUnidadMedida)

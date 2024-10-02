@@ -2,6 +2,7 @@
 using Indicadores.DA.Class;
 using Indicadores.DA.Interface;
 using Indicadores.Model;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,7 +20,7 @@ namespace Indicadores.Service.Controllers
             this.indicadorBL = new IndicadorBL(indicadorDA);
         }
 
-
+        [Authorize]
         [HttpPost]
         [Route("ListarIndicadores")]
         public async Task<IActionResult> ListarIndicadores()
@@ -37,7 +38,7 @@ namespace Indicadores.Service.Controllers
             }
         }
 
-
+        [Authorize]
         [HttpPost]
         [Route("InsertarIndicador")]
         public async Task<IActionResult> InsertarIndicador([FromBody] IndicadorInput indicadorInput)
@@ -54,7 +55,7 @@ namespace Indicadores.Service.Controllers
                 throw;
             }
         }
-
+        [Authorize]
         [HttpPost]
         [Route("EliminarIndicador")]
         public async Task<IActionResult> EliminarIndicador([FromBody] int idIndicador)
@@ -71,7 +72,7 @@ namespace Indicadores.Service.Controllers
                 throw;
             }
         }
-
+        [Authorize]
         [HttpPost]
         [Route("ModificarIndicador")]
         public async Task<IActionResult> ModificarIndicador([FromBody]  IndicadorInput indicadorInput)
@@ -88,6 +89,7 @@ namespace Indicadores.Service.Controllers
                 throw;
             }
         }
+        [Authorize]
         [HttpPost]
         [Route("AsignarPosValorIndicador")]
         public async Task<IActionResult> AsignarPosValorIndicador([FromBody] PosValorMetaDataIndicador posValorMetaData)
@@ -104,6 +106,7 @@ namespace Indicadores.Service.Controllers
                 throw;
             }
         }
+        [Authorize]
         [HttpPost]
         [Route("DesasignarPosValorIndicador")]
         public async Task<IActionResult> DesasignarPosValorIndicador([FromBody] PosValorMetaDataIndicador posValorMetaData)

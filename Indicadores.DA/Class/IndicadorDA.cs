@@ -158,10 +158,10 @@ namespace Indicadores.DA.Class
 
                 var parameters = new DynamicParameters();
                 parameters.Add("@IdIndicador", indicadorInput.IdIndicador, DbType.String);
-                parameters.Add("@CuentaCatalogo", indicadorInput.CuentaCatalogoIndicador, DbType.String);
-                parameters.Add("@UnidadMedida", indicadorInput.UnidadMedidaIndicador, DbType.String);
-                parameters.Add("@Estado", indicadorInput.EstadoIndicador, DbType.String);
-                parameters.Add("@Periodicidad", indicadorInput.PeriodicidadIndicador, DbType.String);
+                parameters.Add("@CuentaCatalogo", indicadorInput.CuentaCatalogoIndicador, DbType.Int32);
+                parameters.Add("@UnidadMedida", indicadorInput.UnidadMedidaIndicador, DbType.Int32);
+                parameters.Add("@EstadoIndicador", indicadorInput.EstadoIndicador, DbType.Int32);
+                parameters.Add("@Periodicidad", indicadorInput.PeriodicidadIndicador, DbType.Int32);
 
                 parameters.Add("@Estado", dbType: DbType.Int32, direction: ParameterDirection.Output);
                 parameters.Add("@Mensaje", dbType: DbType.String, direction: ParameterDirection.Output, size: 200);

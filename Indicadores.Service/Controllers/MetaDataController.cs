@@ -2,6 +2,7 @@
 using Indicadores.DA.Class;
 using Indicadores.DA.Interface;
 using Indicadores.Model;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,7 +19,7 @@ namespace Indicadores.Service.Controllers
             this.metaDataBL = new MetaDataBL(metaDataDA);
         }
 
-
+        [Authorize]
         [HttpPost]
         [Route("ListarMetadata")]
         public async Task<IActionResult> ListarMetadata()
@@ -36,7 +37,7 @@ namespace Indicadores.Service.Controllers
             }
         }
 
-
+        [Authorize]
         [HttpPost]
         [Route("InsertarMetadata")]
         public async Task<IActionResult> InsertarMetadata([FromBody] MetaData metaData)
@@ -53,7 +54,7 @@ namespace Indicadores.Service.Controllers
                 throw;
             }
         }
-
+        [Authorize]
         [HttpPost]
         [Route("EliminarMetadata")]
         public async Task<IActionResult> EliminarMetadata([FromBody] int idMetaData)
@@ -70,7 +71,7 @@ namespace Indicadores.Service.Controllers
                 throw;
             }
         }
-
+        [Authorize]
         [HttpPost]
         [Route("ModificarMetadata")]
         public async Task<IActionResult> ModificarMetadata([FromBody] MetaData metaData)
@@ -87,7 +88,7 @@ namespace Indicadores.Service.Controllers
                 throw;
             }
         }
-
+        [Authorize]
         [HttpPost]
         [Route("ConsultarMetadata")]
         public async Task<IActionResult> ConsultarMetadata([FromBody] int idMetaData)

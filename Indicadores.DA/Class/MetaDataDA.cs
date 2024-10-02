@@ -53,7 +53,7 @@ namespace Indicadores.DA.Class
                 using var connection = _connectionManager.GetConnection();
 
                 var parameters = new DynamicParameters();
-                parameters.Add("@Prefijo", metaData.Prefijo, DbType.String);
+                parameters.Add("@Prefijo", metaData.Prefijo.ToUpper(), DbType.String);
                 parameters.Add("@Descripcion", metaData.Descripcion, DbType.String);
 
                 parameters.Add("@Estado", dbType: DbType.Int32, direction: ParameterDirection.Output);
@@ -96,7 +96,7 @@ namespace Indicadores.DA.Class
 
                 var parameters = new DynamicParameters();
                 parameters.Add("@IdMetaData", metaData.IdMetaData, DbType.Int32);
-                parameters.Add("@Prefijo", metaData.Prefijo, DbType.String);
+                parameters.Add("@Prefijo", metaData.Prefijo.ToUpper(), DbType.String);
                 parameters.Add("@Descripcion", metaData.Descripcion, DbType.String);
 
                 parameters.Add("@Estado", dbType: DbType.Int32, direction: ParameterDirection.Output);

@@ -1,6 +1,7 @@
 ﻿using Indicadores.BL.Class;
 using Indicadores.DA.Interface;
 using Indicadores.Model;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,7 +18,7 @@ namespace Indicadores.Service.Controllers
             this.periodicidadBL = new PeriodicidadBL(periodicidadDA);
         }
 
-
+        [Authorize]
         [HttpPost]
         [Route("ListarPeriodicidad")]
         public async Task<IActionResult> ListarPeriodicidad()
